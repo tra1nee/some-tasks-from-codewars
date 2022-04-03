@@ -141,4 +141,24 @@
 
 
 
-
+// Задача: дан треугольник нечетных чисел, входное значение (Int) - номер строки, нужно вывести -> (Int), сумму чисел в этой строке
+//
+//            1
+//         3     5
+//      7     9    11
+//  13    15    17    19
+//21    23    25    27    29
+// ........
+//
+// Мое решение 03.04.22
+//func rowSumOddNumbers(_ row: Int) -> Int {
+//  return row * row * row
+//}
+//
+//rowSumOddNumbers(5)
+//
+// Best practices
+//
+//func rowSumOddNumbers(_ row: Int) -> Int {
+//  return row * row * row
+//}

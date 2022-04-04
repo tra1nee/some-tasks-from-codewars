@@ -162,3 +162,57 @@
 //func rowSumOddNumbers(_ row: Int) -> Int {
 //  return row * row * row
 //}
+
+
+// Задача: дается (Int) n >= 0 и 0 <= d <= 9, нужно посчитать сколько раз встречается цифра d в промежутке от 0^2...n^2
+//
+// Мое решение 05.04.22
+//func nbDig(_ n: Int, _ d: Int) -> Int {
+//  var array = [Int]()
+//  for i in 0...n {
+//      array.append(i * i)
+//  }
+//
+//  var someNum = 0
+//  var result = 0
+//
+//  for temp in array {
+//    someNum = temp
+//    while someNum != 0 {
+//      if someNum % 10 == d {
+//        result += 1
+//        someNum /= 10
+//      } else {
+//        someNum /= 10
+//      }
+//    }
+//  }
+//    if d == 0 {
+//        result += 1
+//    }
+//  return result
+//}
+//
+//nbDig(5750, 0)
+//
+// Best practices (1) занимает слишком много времени и ресурсов.
+//
+//func nbDig(_ n: Int, _ d: Int) -> Int {
+//    return (0...n).map{"\($0 * $0)".filter { $0 == Character("\(d)")}}.flatMap { $0 }.count
+//}
+//
+// Best practices (2)
+//
+//func nbDig(_ n: Int, _ d: Int) -> Int {
+//  var count = 0
+//  for x in 0...n {
+//    var cube = x * x
+//    repeat {
+//      if cube % 10 == d {
+//        count += 1
+//      }
+//      cube = cube / 10
+//    } while cube >= 1
+//  }
+//  return count
+//}

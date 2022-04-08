@@ -1,3 +1,4 @@
+import Darwin
 
 // Задачи с Сode Wars
 
@@ -215,4 +216,51 @@
 //    } while cube >= 1
 //  }
 //  return count
+//}
+
+// Задача: вводится строка (String) -> каждое слово в этой строке должно быть с заглавной буквы.
+//
+// Best practices
+//
+//import Foundation
+//
+//extension String {
+//    func toJadenCase() -> String {
+//        return self.capitalized
+//    }
+//}
+
+// Задача: вводится число n (Int), нужно вывести количество цифр в числе.
+//
+//func digits(num n: UInt64) -> Int {
+//  return (String(n)).count
+//}
+//
+//digits(num: 43534)
+//
+// Best practices
+//
+//func digits(num n: UInt64) -> Int {
+//  return String(n).count
+//}
+
+// Задача: дается число Int, нужно вывести число возможного количества рядов составленных из этого числа (Пример: 15 кеглей - 5 рядов)
+//
+// Мое решение 05.04.22
+//
+//func pyramid(_ balls: Int) -> Int{
+//  return (-1 + Int(sqrt(Double(1 + 8 * balls)))) / 2
+//}
+//
+//pyramid(10)
+//
+// Best practices
+//
+//func pyramid(_ balls: Int) -> Int {
+//    var b = balls, n = 0
+//    while b > 0 {
+//        n += 1
+//        b -= n
+//    }
+//    return b == 0 ? n : n - 1
 //}
